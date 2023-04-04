@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.example.gen.bean.AccountBean" table="ACC">
+		
+		<id name="accNo" type="string">
+			<column name="ACCNO"   />
+			<generator class="com.example.gen.id.AccountNumberGenerator">
+				 <param name="sequence">ACCNO_SEQ</param>  
+			</generator>
+		</id>
+
+		<property name="name" type="string">
+				<column name="NAME" length="20" not-null="true"/>
+		</property>
+		
+		<property name="balance" type="double">
+			<column name="BALANCE" precision="8" scale="2" not-null="true"/>
+		</property>
+		
+		<property name="accCreationDate" type="date">
+			<column name="ACC_CRE_DT" precision="8" scale="2" not-null="true"/>
+		</property>
+
+	</class>
+
+</hibernate-mapping>  
