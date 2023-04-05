@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="connection.username">Java</property>
+		<property name="connection.password">ORACLE</property>
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+
+		<!-- Data base connection pool size & other configuration property -->
+		<property name="connection.pool_size">15</property>
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="use_sql_comment">true</property>
+		<property name="format_sql">true</property>
+
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">30</property>
+		<property name="hibernate.c3p0.acquire_increment">5</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+
+		<mapping class="com.example.m.to.one.bean.Department" />
+		<mapping class="com.example.m.to.one.bean.Employee" />
+		
+
+
+	</session-factory>
+
+</hibernate-configuration>
